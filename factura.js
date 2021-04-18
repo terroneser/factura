@@ -88,4 +88,4 @@ formDetalle.onsubmit = (e) => {
 
 btnGuardar.onclick = () =>{
     //crear objeto cabecera factura
-}
+};
