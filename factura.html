@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+    <style>
+        .contenedor-boton {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    </head>
+	<body class="bg-light container">
+        <h1 class="display-4 text-danger">Factura</h1>
+		<hr />
+
+        <main>
+            <!-- CABECERA -->
+            <section class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Cabecera de Factura</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="">Razón Social:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Razón Social"
+                                        id="inputRazonSocial"
+                                    >
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">RUC:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Ejem. 5566548552"
+                                        id="inputRuc"    
+                                    >
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">Num. Factura:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Ejem. 001"
+                                        id="inputNum"
+                                    >
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label for="">Dirección:</label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        placeholder="Ejem. Smz. 11, Mz. 6, Lt. 23"
+                                        id="inputDireccion"    
+                                    >
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">Fecha</label>
+                                    <input 
+                                        type="date" 
+                                        class="form-control"
+                                        id="inputFecha"
+                                    >
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- AGREGAR -->
+            <section class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="row" id="formDetalle">
+                                <div class="form-group col-md-2">
+                                    <label for="">Cantidad:</label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control"
+                                        id="inputCantidad"
+                                    >
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="">Descripción</label>
+                                    <select id="selectDescripcion" class="form-control">
+                                        <option value="0">--Seleccione--</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="">P. Unitario:</label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        id="inputUnitario">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="">P. Total</label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        id="inputTotal">
+                                </div>
+                                <div class="form-group col-md-1 contenedor-boton">
+                                    <button class="btn btn-primary" type="submit">Agregar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-4">
+                    <button class="btn btn-dark btn-lg" id="btnGuardar">Guardar Factura</button>
+                </div>
+            </section>
+            <!-- TABLA -->
+            <section class="row mt-4">
+                <div class="col">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Cantidad</th>
+                                <th>Descripción</th>
+                                <th>Precio Unitario</th>
+                                <th>Precio Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <script src="./JS/factura.js"></script>
+
+	</body>
+</html>
