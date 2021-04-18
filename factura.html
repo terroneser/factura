@@ -28,7 +28,7 @@
                             <h3 class="card-title">Cabecera de Factura</h3>
                         </div>
                         <div class="card-body">
-                            <form class="row">
+                            <form class="row" id="formCabecera">
                                 <div class="form-group col-md-4">
                                     <label for="">Razón Social:</label>
                                     <input 
@@ -104,14 +104,18 @@
                                     <input 
                                         type="number" 
                                         class="form-control" 
-                                        id="inputUnitario">
+                                        id="inputUnitario"
+                                        disabled
+                                    >
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="">P. Total</label>
                                     <input 
                                         type="number" 
                                         class="form-control" 
-                                        id="inputTotal">
+                                        id="inputTotal"
+                                        disabled
+                                        >
                                 </div>
                                 <div class="form-group col-md-1 contenedor-boton">
                                     <button class="btn btn-primary" type="submit">Agregar</button>
@@ -145,6 +149,7 @@
             </section>
         </main>
 
+        <script src="./validacion.js"></script>
         <script src="./factura.js"></script>
 
 	</body>
