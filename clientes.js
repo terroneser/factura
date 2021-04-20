@@ -15,9 +15,11 @@ let $cliente = {
     console.warn('cliente añadido al localstorage' , nuevoCliente)
 
 
-    localStorage.setItem("cliente" , JSON.stringify($cliente))
-    let pre = document.querySelector('#msg pre')  
-    pre.textContent = '\n' + JSON.stringify(nuevoCliente , '\t' , 2 )
+    localStorage.setItem("cliente" , JSON.stringify(nuevoCliente))
+   
+    //Verificación
+    //let pre = document.querySelector('#msg pre')  
+    //pre.textContent = '\n' + JSON.stringify(nuevoCliente , '\t' , 2 )
 }
 
     document.addEventListener("DOMContentLoaded",  ()=>{
