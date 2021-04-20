@@ -11,9 +11,7 @@ const inputNum = document.getElementById("inputNum");
 const inputDireccion = document.getElementById("inputDireccion");
 const inputFecha = document.getElementById("inputFecha");
 const formCabecera = document.getElementById("formCabecera");
-const formulario= document.getElementById('formulario');
-const Codigo= document.getElementById('Codigo');
-const NombreProducto= document.getElementById('NombreProducto');
-const Precio= document.getElementById('Precio');
-const Existencia= document.getElementById('Existencia');
-const ListaDeProductos= document.getElementById('ListaDeProductos');
+/*estos son de entrada de productos*/
+const formulario = document.getElementById('formulario');
+const productos = document.getElementById('productos');
+const listaProductos = document.getElementById('listaProductos');
