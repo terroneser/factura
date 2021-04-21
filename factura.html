@@ -18,12 +18,11 @@
 	<body class="bg-light container">
         <h1 class="display-4 text-danger">Factura</h1>
 		<hr />
-
         <main>
             <!-- CABECERA -->
             <section class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card"> <!-- cuadro -->
                         <div class="card-header">
                             <h3 class="card-title">Cabecera de Factura</h3>
                         </div>
@@ -124,9 +123,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col mt-4">
-                    <button class="btn btn-dark btn-lg" id="btnGuardar">Guardar Factura</button>
-                </div>
             </section>
             <!-- TABLA -->
             <section class="row mt-4">
@@ -141,16 +137,21 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="cuerpoTabla">
+                        <tbody id="cuerpoTabla" contenteditable="true">
 
                         </tbody>
                     </table>
                 </div>
             </section>
+            <div class="col mt-4">
+                <button class="btn btn-dark btn-lg" id="btnGuardar">Guardar Factura</button>
+                <button class="btn btn-dark btn-lg" id="btnVer">Ver Factura</button>
+            </div>
         </main>
 
         <script src="./validacion.js"></script>
         <script src="./factura.js"></script>
+        <script src="./hojaFactura.js"></script>
 
 	</body>
 </html>
