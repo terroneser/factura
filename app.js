@@ -1,53 +1,64 @@
-let ArrayProductos=[];
+/*SE HACE UN ARREGLO QUE CONTEMNDRAN NUESTROS DATOS*/
+let arrayDato = [];
 
-let item={
-    Codigo:"", NombreProducto:"",Precio:"",Existencia:"",
+let item = {
+   Codigo:"",    NombreProducto:"",    Precio:"",  Existencia:"",
 }
-
-function AgregarProductos(NCodigo,TNombre,NPrecio,NExistencia){
+/*LA FUNCION  RECIBIRA UN TEXTO QUE LO GUARDARA EN EL ITEM*/
+function agregarDatos(NCodigo,TProducto,NPrecio,NExistencia){
     item={
-        Codigo:NCodigo, NombreProducto:TNombre, Precio:NPrecio, Existencia:NExistencia,
+   Codigo:NCodigo,    NombreProducto:TProducto,    Precio:NPrecio,     Existencia:NExistencia,
     }
-/* .push para agregar un elemento al arreglo*/
-    ArrayProductos.push(item);
+    /*PUSH PARA METER UN ELEMENTO AL ARREGLO*/
+    arrayDato.push(item);
 }
-/*.onsumbit para que cuando se le de click el dato se almacene e el arreglo
-e.preventDefault para evitar que la pagina se refresque cuando se le manden datos al formulario*/
+
+
+/*.onsubmit para que cuando se le de click el texto se almacene en el array
+e.preventDefault para evitar que la pagina se refresque cuando se le manden datos
+se declaran variables que van almacenar los datos obtenidos*/
 formulario.onsubmit=function(e){
     e.preventDefault();
-    let NCodigo= Codigo.value;
-    let TNombre= NombreProducto.value;
-    let NPrecio= Precio.value;
-    let NExistencia= Existencia.value;
-    AgregarProductos(NCodigo,TNombre,NPrecio,NExistencia)
-    console.log(ArrayProductos);
+    let NumeroCodigo=Codigo.value;
+    let TextoProducto=NombreProducto.value;
+    let NumeroPrecio=Precio.value;
+    let NumeroExistencia=Existencia.value;
+    agregarDatos(NumeroCodigo,TextoProducto,NumeroPrecio,NumeroExistencia,)
+    console.log(arrayDato);
+
+
+/*se les asigna un vacio para que los campos esten en blanco*/  
     Codigo.value="";
     NombreProducto.value="";
     Precio.value="";
     Existencia.value="";
-    GuaradarBD();
+    guardarBD();
 }
-/*JSON.stringify sirve para convertir los arreglos a texto*/
-function GuaradarBD(){
-    localStorage.setItem('Datos',JSON.stringify(ArrayProductos));
-    MostrarBD();
+/*JSON.stringifi para  convertir el arreglo a texto*/
+function guardarBD(){
+    localStorage.setItem('Productos',JSON.stringify( arrayDato));
+    mostrarBD();
 }
-document.addEventListener('DOMContentLoaded',MostrarBD);
-function MostrarBD(){
-    /*JSON.parse para convertir string a texto*/
-    ArrayPrductos=JSON.parse(localStorage.getItem('Datos'));
-
-    
+document.addEventListener('DOMContentLoaded',mostrarBD);
+function mostrarBD(){
+   /*JSON.parse para convertit string a texto*/
+   arrayDato=JSON.parse(localStorage.getItem('Productos'));
+   /* For va a ciclarse mientras tareas nuevas y escribira dentro de la lista*/
+   /* innerHTML convierte en html*/
+   for (var i=0;i<arrayDato.length;i++){
+       listaTareas.innerHTML+=`
+       <div class="alert alert-primary" role="alert"> 
+       <strong>${arrayDato[i].Codigo}--${arrayDato[i].NombreProducto}--${arrayDato[i].Precio}--${arrayDato[i].Existencia}</strong>
+       <span class="float-right">
+         <i class="fa fa-edit ml-3" aria-hidden="true"></i>
+         <i class="fa fa-trash" aria-hidden="true"></i>
+       </span>
+     </div>`
+   }   
 }
-/*ESTO AUN NO FUNCIONA, DEBERIA MOSTRAR EN PANTALLA LOS PRODUCTOS ALMACENADOS*/
-    for (var i=0;i<ArrayProductos.length;i++) {
-        listaProductos.innerHTML+=`
-        <div class="alert alert-primary" role="alert">
-            <i class="fa fa-list" aria-hidden="true"></i>
-            <strong>${ArrayProductos[i].listaProductos}</strong>--${ArrayProductos[i].estado}
-            <span class="float-right">
-              <i class="fa fa-edit ml-3" aria-hidden="true"></i>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </span>
-          </div>`
+listaTareas.onclick=function(e){
+    e.preventDefault();
+    if(e.target.classList[1]=== "fa-edit" ||e.target.classList[1]==="fa-trash"){
+        console.log(e.target.classList[1]);
     }
+}
