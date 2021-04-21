@@ -1,6 +1,11 @@
 /*SE HACE UN ARREGLO QUE CONTEMNDRAN NUESTROS DATOS*/
 let arrayDato = [];
 
+let itemId = document.getElementById( "trash" ) ;
+console.log( itemId ) ;
+let id = itemId.getAttribute( "data-id" ) ;
+console.log( id ) ;
+
 let item = {
    Codigo:"",    NombreProducto:"",    Precio:"",  Existencia:"",
 }
@@ -44,7 +49,6 @@ function mostrarBD(){
    /*JSON.parse para convertit string a texto*/
    arrayDato=JSON.parse(localStorage.getItem('Productos'));
    /* For va a ciclarse mientras tareas nuevas y escribira dentro de la lista*/
-   /* innerHTML convierte en html*/
    for (var i=0;i<arrayDato.length;i++){
        listaTareas.innerHTML+=`
        <div class="alert alert-primary" role="alert"> 
@@ -56,6 +60,7 @@ function mostrarBD(){
      </div>`
    }   
 }
+
 listaTareas.onclick=function(e){
     e.preventDefault();
     if(e.target.classList[1]=== "fa-edit" ||e.target.classList[1]==="fa-trash"){
