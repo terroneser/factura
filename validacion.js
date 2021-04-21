@@ -14,10 +14,3 @@ const formCabecera = document.getElementById("formCabecera");
 const btnVer = document.getElementById('btnVer');
 /*estos son de entrada de productos*/
 
-/*const formulario = document.getElementById('formulario');
-const contenidoTabla = document.getElementById('contenidoTabla');
-const inputCodigo = document.getElementByID('inputCodigo');
-const inputNombreProducto = document.getElementByID('inputNombreProducto');
-const inputPrecio = document.getElementByID('inputPrecio');
-const inputExistencia = document.getElementByID('inputExistencia');
-const listaTarea= document.getElementByID('listaTarea');*/
