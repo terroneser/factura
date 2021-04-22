@@ -2,12 +2,32 @@ console.log('test ;-;');
 //se declara esto con los id que tienen en el documento hojafactura.js para reducir codigo
 let tablaprint = document.querySelector('#cuerpoTabla');
 let datosprint = document.querySelector('#datosfactura');
+let arregloProductos = [
+    {id: 1, nombreProducto: "Thrush 17711 Turbo Silenciador", precio: 812.00},
+    {id: 2,nombreProducto: "Duralast Platinum AGM Bateria 65-AGM Grupo BCI 65 750 CCA",precio: 2529.00},
+    {id: 3,nombreProducto: "Llanta Bridgestone Turanza Er300 205/55R16",precio: 169.00},
+    {id: 4,nombreProducto: "Castrol Aceite EDGE 5W-20 de 5 qt",precio: 451.00},
+    {id: 5,nombreProducto: "Funda Para Volante De Cuero Antideslizante",precio: 365.16},
+    {id: 6,nombreProducto: "Par Marcos Porta Placas",precio: 52.00},
+    {id: 7,nombreProducto: "Autoasiento para carro Graco 4Ever 4-in-1 cougar",precio: 7790.00},
+    {id: 8,nombreProducto: "Auto Estereo Bluetooth Pioneer",precio: 1614.00}
+];
 //se declara el arreglo donde se almancena los datos de el storage
 let arrayPrint = [];
 //se pasan los datos de el storage a el array
 arrayPrint = JSON.parse(localStorage.getItem('facturas'))
 //el valor que se almaceno para la id a buscar en el registro
 let apuntador =parseInt(sessionStorage.getItem('apuntador'))
+
+
+const muestraNombre = (id) => {
+    const nombreProducto = arregloProductos.find((p) => {
+        if(p.id === +id){
+            return p;
+        }
+    })
+    return nombreProducto.nombreProducto;
+};
 
 
 //funcion para realizar la muestra en pantalla
@@ -22,11 +42,24 @@ datosprint.innerHTML += `Nombre: ${arrayPrint[apuntador].nombre} | Direccion: ${
         console.log(element)
         tablaprint.innerHTML += `<tr>
 <td>${element.cantidad}</td>
-<td>${element.descripcion}</td>
+<td>${muestraNombre(element.descripcion)}</td>
 <td>${element.precioUnitario} $</td>
 <td>${element.precioTotal} $</td>
 </tr>`
 });
+};
+
+const sumaTotal = () => {
+    
+}
+
+const mostrarTotal = () => {
+    arrayPrint[apuntador].detalle.forEach(element => {
+        tablaprint.innerHTML += `<tr>
+        <td></td>
+        <td></td>
+        <td></td>`
+    }
 }
 //esta funcion es para evitar problemas de que el arreglo se quede vacio
 function update(){
@@ -37,8 +70,8 @@ function update(){
     //caso contrario se vuelve a alamcenar el valor de e localstorage en el arreglo
     else{
         arrayPrint = JSON.parse(localStorage.getItem('facturas'))
-    }
-}
+    };
+};
 //se ejecutan las funciones al cargar la pagina
 test()
 update()

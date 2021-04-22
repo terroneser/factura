@@ -3,10 +3,14 @@ let facturas = [];
 let arregloDetalle = [];
 
 let arregloProductos = [
-    {id: 1, nombreProducto: "Producto 1", precio: 100.5},
-    {id: 2,nombreProducto: "Producto 2",precio: 52.0},
-    {id: 3,nombreProducto: "Producto 3",precio: 16.9},
-    {id: 4,nombreProducto: "Producto 4",precio: 25.8}
+    {id: 1, nombreProducto: "Thrush 17711 Turbo Silenciador", precio: 812.00},
+    {id: 2,nombreProducto: "Duralast Platinum AGM Bateria 65-AGM Grupo BCI 65 750 CCA",precio: 2529.00},
+    {id: 3,nombreProducto: "Llanta Bridgestone Turanza Er300 205/55R16",precio: 169.00},
+    {id: 4,nombreProducto: "Castrol Aceite EDGE 5W-20 de 5 qt",precio: 451.00},
+    {id: 5,nombreProducto: "Funda Para Volante De Cuero Antideslizante",precio: 365.16},
+    {id: 6,nombreProducto: "Par Marcos Porta Placas",precio: 52.00},
+    {id: 7,nombreProducto: "Autoasiento para carro Graco 4Ever 4-in-1 cougar",precio: 7790.00},
+    {id: 8,nombreProducto: "Auto Estereo Bluetooth Pioneer",precio: 1614.00}
 ];
 
  //
@@ -42,6 +46,8 @@ const getNombreProductoById = (id)=>{
     });
     return objProducto.nombreProducto;
 };
+
+
 
 const getPrecioProductoById = (id)=>{
     const objProducto = arregloProductos.find((p) => {
@@ -163,6 +169,7 @@ formDetalle.onsubmit = (e) => {
     };
     agregarDetalle(objDetalle);
     redibujarTabla();
+    console.log(objDetalle);
 };
 
 btnGuardar.onclick = () =>{
@@ -228,3 +235,4 @@ btnVer.onclick = () => {
     imprimir.document.write(hojaFactura);
 };
 console.log(arregloProductos);
+

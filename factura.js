@@ -107,9 +107,7 @@ const modificarBtn = () => {
         }
     };
 
-const modificarTabla = () => {
-    
-};
+
 
 //funcion eliminar regresa lo mismo menos el seleccionado
 const eliminarDetalleById = (id) => {
