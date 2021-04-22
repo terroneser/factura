@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Parte de clientes</title>
     <script src="clientes.js"></script>
+    <LINK REL=StyleSheet HREF="cliente.css" TYPE="text/css" MEDIA=screen>
 </head>
 <body>
     <header>
@@ -14,25 +15,50 @@
        <form onsubmit="addData() ; return false" id="myForm">
         <div >   
              <label for="rfc">RFC</label>
-             <input type="text" id="rfc">
+             <input type="text" id="rfc" required>
         </div>
 
 
         <div>   
             <label for="razonSc">Razón social</label>
-            <input type="text" id="razonSc">
+            <input type="text" id="razonSc" required>
         </div>
 
         <div>   
             <label for="direccionFisc">Dirección Fiscal</label>
-            <input type="text"  id="direccionFisc">
+            <input type="text"  id="direccionFisc" required>
          </div>
         <div >   
              <label for="email">Email</label>
-             <input type="text"  id="email">
+             <input type="text"  id="email" required>
          </div>
 
     <div>
+            <input type="submit" value="Añadir">
+        </div>
+
+        <div>
+            <button id="btnPrint" onclick="showData()">Mostrar clientes</button>
+        </div>
+        <div>
+            <input type="reset" value="Clear">
+            <input type="button" value="Delete localStorage" onclick="deleteStorage()">
+        </div>
+    </form> 
+
+<div>
+    <table id="MyTable" border="1">
+        <tr>
+            <th>Cliente RFC</th>
+            <th>Razón Social</th>
+            <th>Dirección Fiscal</th>
+            <th>Correo electrónico</th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
             <input type="submit" value="Añadir">
         </div>
 

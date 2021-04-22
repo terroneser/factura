@@ -1,6 +1,4 @@
-
-    var arr = new Array() ;
-
+var arr = new Array() ;
 
     function addData(){
         getData() ;
@@ -11,8 +9,8 @@
             email: document.getElementById("email").value 
         }) ;
         localStorage.setItem("localData" , JSON.stringify(arr)) ;
-
     }
+    
 
     function showData(){
         getData() ;
@@ -25,27 +23,36 @@
             var cell3 = row.insertCell();
             var cell4 = row.insertCell();
 
-            cell1.innerHTML = arr[i].rfc ;
-            cell2.innerHTML = arr[i].razonSc ;
+            cell1.innerHTML = arr[i].rfc ;  //añade a la celda i el valor de JSON en rfc: ....
+            cell2.innerHTML = arr[i].razonSc ; //innerHTML reemplaza la sintaxis HTML del elemento por la nueva...
             cell3.innerHTML = arr[i].direccionFisc ;
             cell4.innerHTML = arr[i].email ;
         }
     }
 
+    function showDataNull(){
+        getData() ;
+        var tbl = document.getElementById("MyTable")
+
+        for (var i = 0 ; i < arr.length ; i++){
+            var row = tbl.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
+        }
+    }
+
     function getData(){
         var str = localStorage.getItem("localData") ;
+        //Si str tiene valores conviertelo en objeto para el array
         if (str != null){
-            arr = JSON.parse(str)
+            arr = JSON.parse(str) 
         }
     }
 
     function deleteStorage(){
         localStorage.clear()
-        var elmtTable = document.getElementById('myTable');
-        var tableRows = elmtTable.getElementsByTagName( 'tr');
-        var rowCount = tableRows.length;
-
-        for (var x=rowCount-1; x>0; x--) {
-        elmtTable.removeChild(tableRows[x]);
-}
-    }   
+        getData()
+        showDataNull()
+    }
