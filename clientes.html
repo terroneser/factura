@@ -11,39 +11,50 @@
     <header>
         <h1>clientes</h1>
     </header>
-       <form >
-        <div class="formBox">   
-                    <label for="rfc">RFC</label>
-                    <input type="text" id="rfc">
+       <form onsubmit="addData() ; return false" id="myForm">
+        <div >   
+             <label for="rfc">RFC</label>
+             <input type="text" id="rfc">
         </div>
 
 
-        <div class="formBox">   
-                    <label for="razonSc">Razón social</label>
-                    <input type="text" id="razonSc">
+        <div>   
+            <label for="razonSc">Razón social</label>
+            <input type="text" id="razonSc">
         </div>
 
-        <div class="formBox">   
-
-                        <label for="direccionFisc">Dirección Fiscal</label>
-                        <input type="text"  id="direccionFisc">
+        <div>   
+            <label for="direccionFisc">Dirección Fiscal</label>
+            <input type="text"  id="direccionFisc">
+         </div>
+        <div >   
+             <label for="email">Email</label>
+             <input type="text"  id="email">
          </div>
 
-        <div class="formBox">   
+    <div>
+            <input type="submit" value="Añadir">
+        </div>
 
-                        <label for="email">Email</label>
-                        <input type="text"  id="email">
-         </div>
+        <div>
+            <button id="btnPrint" onclick="showData()">Mostrar clientes</button>
+        </div>
+        <div>
+            <input type="reset" value="Clear"">
+            <input type="button" value="Delete localStorage" onclick="deleteStorage()">
+        </div>
+    </form> 
 
-   <div class="rgistro">
-        <button id="btnRegistro" >Nuevo Cliente</button>
-    </div>
-
-    <div id="msg">
-        <pre></pre>
-    </div>
-    
-</form> 
+<div>
+    <table id="MyTable" border="1">
+        <tr>
+            <th>Cliente RFC</th>
+            <th>Razón Social</th>
+            <th>Dirección Fiscal</th>
+            <th>Correo electrónico</th>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>
