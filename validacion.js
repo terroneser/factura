@@ -12,3 +12,4 @@ const inputDireccion = document.getElementById("inputDireccion");
 const inputFecha = document.getElementById("inputFecha");
 const formCabecera = document.getElementById("formCabecera");
 const btnVer = document.getElementById('btnVer');
+const cuerpoTablaPrint = document.getElementById('cuerpoTablaPrint');

@@ -1,12 +1,17 @@
 // const llenarProductos = () => { } Funcion ANONIMA
 let facturas = [];
 let arregloDetalle = [];
+//let arregloHojaFactura = [];
 
 let arregloProductos = [
-    {id: 1, nombreProducto: "Producto 1", precio: 100.5},
-    {id: 2,nombreProducto: "Producto 2",precio: 52.0},
-    {id: 3,nombreProducto: "Producto 3",precio: 16.9},
-    {id: 4,nombreProducto: "Producto 4",precio: 25.8}
+    {id: 1, nombreProducto: "Thrush 17711 Turbo Silenciador", precio: 812.00},
+    {id: 2,nombreProducto: "Duralast Platinum AGM Bateria 65-AGM Grupo BCI 65 750 CCA",precio: 2529.00},
+    {id: 3,nombreProducto: "Llanta Bridgestone Turanza Er300 205/55R16",precio: 169.00},
+    {id: 4,nombreProducto: "Castrol Aceite EDGE 5W-20 de 5 qt",precio: 451.00},
+    {id: 5,nombreProducto: "Funda Para Volante De Cuero Antideslizante",precio: 365.16},
+    {id: 6,nombreProducto: "Par Marcos Porta Placas",precio: 52.00},
+    {id: 7,nombreProducto: "Autoasiento para carro Graco 4Ever 4-in-1 cougar",precio: 7790.00},
+    {id: 8,nombreProducto: "Auto Estereo Bluetooth Pioneer",precio: 1614.00}
 ];
 
  //
@@ -14,6 +19,7 @@ const verificarFacturasLocalStorage = () => {
     const facturasLS = JSON.parse(localStorage.getItem("facturas"));
      //si son iguales los agrega a arreglo vacio
     facturas = facturasLS || [];
+    
     
     /*if(facturasLS){
         facturas = facturasLS;
@@ -178,6 +184,8 @@ btnGuardar.onclick = () =>{
     };
     //agregamos el objeto al arreglo
     facturas.push(objFactura);
+   // console.log(localStorage.getItem('facturas', JSON))
+    //arregloHojaFactura.push(objFactura);
     //limpiar campos
     formCabecera.reset();
     formDetalle.reset();
@@ -220,7 +228,15 @@ inputCantidad.onchange = () => {
     calcularTotal();
 };
 
+let prueba = JSON.parse(localStorage.getItem('facturas'.detalle));
+
 btnVer.onclick = () => {
-    let imprimir = window.open('','','width=800 height=600'); 
-    imprimir.document.write(`${hojaFactura}`);
+   // redibujarTabla();
+   
+   let imprimir = window.open('','','width=800 height=600'); 
+    imprimir.document.write(hojaFactura);
 };
+
+null
+
+//cuerpoTablaPrint.innerHTML = `facturas[0].detalle`

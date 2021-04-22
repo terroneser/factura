@@ -4,8 +4,6 @@ let hojaFactura = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <title>CodePen - Factura</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-  
-  <link rel="stylesheet" href="script/imprimircss/style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -31,14 +29,20 @@ let hojaFactura = `<!DOCTYPE html>
                     <th>Precio Total</th>
                 </tr>
             </thead>
-            <tbody id="cuerpoTabla" contenteditable="true">
+            <tbody id="cuerpoTablaPrint">
+              <tr>
+              <td>${prueba}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              </tr>
             </tbody>
         </table>
     </div>
 </section>
 <!-- partial -->
-<script src="assets/scripts/app.js"></script>
-<script src="assets/scripts/validacion.js"></script>
-<script src="assets/scripts/index.html"></script>
+<script src="./validacion.js"></script>
+        <script src="./factura.js"></script>
+        <script src="./hojaFactura.js"></script>
 </body>
 </html>`;
