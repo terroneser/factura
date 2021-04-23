@@ -78,7 +78,7 @@ const redibujarTabla = () => {
         botonModificar.innerText = 'Modificar';
         botonModificar.onclick = () => {
             console.log('detectado')
-            modificarBtn();
+            modificarBtn(detalle.descripcion);
         };
         tdModificar.appendChild(botonModificar);
         fila.appendChild(tdModificar);
@@ -175,7 +175,7 @@ formDetalle.onsubmit = (e) => {
 btnGuardar.onclick = () =>{
     //crear objeto cabecera factura
     let objFactura = {
-        nombre: inputRazonSocial.value,
+        nombre: inputNombre.value,
         direccion: inputDireccion.value,
         fecha: inputFecha.value,
         numero: inputNum.value,

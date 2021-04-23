@@ -48,8 +48,8 @@ datosprint.innerHTML += `Nombre: ${arrayPrint[apuntador].nombre} | Direccion: ${
 <td>$ ${element.precioUnitario}</td>
 <td>$ ${element.precioTotal} </td>
 </tr>`
-let suma = parseFloat(element.precioTotal);
-document.write('Subtotal: '+suma );
+/*let suma = parseFloat(element.precioTotal);
+document.write('Subtotal: '+suma );*/
 });
 };
 
