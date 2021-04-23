@@ -1,4 +1,5 @@
 console.log('test ;-;');
+let suma = 0;
 //se declara esto con los id que tienen en el documento hojafactura.js para reducir codigo
 let tablaprint = document.querySelector('#cuerpoTabla');
 let datosprint = document.querySelector('#datosfactura');
@@ -38,29 +39,21 @@ datosprint.innerHTML += `Nombre: ${arrayPrint[apuntador].nombre} | Direccion: ${
 
 // se realiza una funcion foreach para imprimir los valores que se tienen guardados en el listado de articulos
     arrayPrint[apuntador].detalle.forEach(element => {
+
         //seguidamnte por cada elemento encontrado en el arreglo en la posicion seleccionada se imprimen en pantalla todos los elemento 
         console.log(element)
         tablaprint.innerHTML += `<tr>
 <td>${element.cantidad}</td>
 <td>${muestraNombre(element.descripcion)}</td>
-<td>${element.precioUnitario} $</td>
-<td>${element.precioTotal} $</td>
+<td>$ ${element.precioUnitario}</td>
+<td>$ ${element.precioTotal} </td>
 </tr>`
+let suma = parseFloat(element.precioTotal);
+document.write('Subtotal: '+suma );
 });
 };
 
-const sumaTotal = () => {
-    
-}
 
-const mostrarTotal = () => {
-    arrayPrint[apuntador].detalle.forEach(element => {
-        tablaprint.innerHTML += `<tr>
-        <td></td>
-        <td></td>
-        <td></td>`
-    }
-}
 //esta funcion es para evitar problemas de que el arreglo se quede vacio
 function update(){
     // si el arreglo esta como null se convierte a arreglo
