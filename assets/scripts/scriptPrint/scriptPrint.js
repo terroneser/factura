@@ -25,8 +25,8 @@ const muestraNombre = (id) => {
     const nombreProducto = arregloProductos.find((p) => {
         if(p.id === +id){
             return p;
-        }
-    })
+        };
+    });
     return nombreProducto.nombreProducto;
 };
 
