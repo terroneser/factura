@@ -16,7 +16,7 @@
 
     </head>
 	<body class="bg-light container">
-        <h1 class="display-4 text-danger">Factura</h1>
+        <h1 class="display-4 text-danger">Taller Automotriz Alex</h1>
 		<hr />
         <main>
             <!-- CABECERA -->
@@ -24,17 +24,17 @@
                 <div class="col">
                     <div class="card"> <!-- cuadro -->
                         <div class="card-header">
-                            <h3 class="card-title">Cabecera de Factura</h3>
+                            <h3 class="card-title">Datos del Cliente</h3>
                         </div>
                         <div class="card-body">
                             <form class="row" id="formCabecera">
                                 <div class="form-group col-md-4">
-                                    <label for="">Razón Social:</label>
+                                    <label for="">Nombre:</label>
                                     <input 
                                         type="text" 
                                         class="form-control" 
-                                        placeholder="Razón Social"
-                                        id="inputRazonSocial"
+                                        placeholder="Nombre"
+                                        id="inputNombre"
                                     >
                                 </div>
                                 <div class="form-group col-md-4">
@@ -75,25 +75,6 @@
                             </form>
                         </div>
                     </div>
-                </div>
-            </section>
-               <!-- TABLA -->
-               <section class="row mt-4">
-                <div class="col">
-                    <table class="table text-center">
-                        <thead>
-                            <tr>
-                                <th>Cantidad</th>
-                                <th>Descripción</th>
-                                <th>Precio Unitario</th>
-                                <th>Precio Total</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cuerpoTabla" contenteditable="true">
-
-                        </tbody>
-                    </table>
                 </div>
             </section>
             <!-- AGREGAR -->
@@ -143,6 +124,25 @@
                     </div>
                 </div>
             </section>
+            <!-- TABLA -->
+            <section class="row mt-4">
+                <div class="col">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Cantidad</th>
+                                <th>Descripción</th>
+                                <th>Precio Unitario</th>
+                                <th>Precio Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla" contenteditable="true">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
          
             <div class="col mt-4">
                 <button class="btn btn-dark btn-lg" id="btnGuardar">Guardar Factura</button>
@@ -155,6 +155,5 @@
         <script src="assets/scripts/hojaFactura.js"></script>
         <script src="assets/scripts/validacion.js"></script>
         <script src="assets/scripts/app.js"></script>
-
 	</body>
 </html>
